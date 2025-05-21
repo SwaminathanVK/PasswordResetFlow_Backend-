@@ -76,6 +76,7 @@ export const forgetpassword = async (req, res) => {
 // Reset password
 export const resetPassword = async (req, res) => {
   try {
+    const{ resetToken } = req.params;
     const { password } = req.body;
     const user = req.user;
   

@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './Database/dbConfig.js';
-import authRouter from './Routers/authRouter.js';
+import authRoutes from './Routers/authRouter.js';
 import cors from 'cors';
 
 
@@ -14,7 +14,15 @@ app.use(cors());
 
 connectDB();
 
-app.use('/api/auth', authRouter);
+app.use('/api/auth', authRoutes);
+
+
+
+app.use(cors({
+  origin: 'http://localhost:3000', // React dev server
+  credentials: true
+}));
+
 
 
 const port = process.env.PORT;

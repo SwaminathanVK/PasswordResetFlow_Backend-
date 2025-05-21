@@ -9,5 +9,9 @@ router.post('/login', loginUser);
 router.post("/forgot-password", forgetpassword);
 router.post("/reset-password/:token", verifyResetToken , resetPassword);
 
+router.get('/test',(req,res)=>{
+    res.json({message:"api is working"});
+})
+
 
 export default router;
