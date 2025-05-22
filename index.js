@@ -17,12 +17,14 @@ connectDB();
 app.use('/api/auth', authRoutes);
 
 
-
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://passwordresetappfrontend.netlify.app'
+];
 app.use(cors({
-    origin: 'https://passwordresetappfrontend.netlify.app',  // or your frontend domain
-    credentials: true,
-    // const resetLink = 'https://passwordresetappfrontend.netlify.app
-  }));
+  origin: allowedOrigins,
+  credentials: true
+}));
 
 
 
