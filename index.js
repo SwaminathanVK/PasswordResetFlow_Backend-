@@ -18,7 +18,11 @@ app.use('/api/auth', authRoutes);
 
 
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://passwordresetappfrontend.netlify.app',  // or your frontend domain
+    credentials: true,
+    // const resetLink = 'https://passwordresetappfrontend.netlify.app
+  }));
 
 
 
